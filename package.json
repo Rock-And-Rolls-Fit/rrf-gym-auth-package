@@ -1,0 +1,30 @@
+{
+  "name": "@rock-and-rolls-fit/rrf-gym-auth-package",
+  "version": "1.0.0",
+  "description": "Reusable authorization package for RockFit microservices using CASL",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@casl/ability": "^6.0.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0"
+  },
+  "dependencies": {
+    "keyv": "^5.0.0",
+    "@keyv/redis": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "UNLICENSED"
+}
