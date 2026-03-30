@@ -6,6 +6,7 @@ import type {
   AuthzModuleOptions,
   AuthzModuleAsyncOptions,
 } from './config/authz-options.interface.js';
+import { AuthzHeaderGuard } from './guards/authz-header.guard.js';
 import { RedisRulesProvider } from './providers/redis-rules.provider.js';
 import { AuthzAbilityFactory } from './providers/authz-ability.factory.js';
 import { PermissionsGuard } from './guards/permissions.guard.js';
@@ -32,11 +33,13 @@ export class AuthzModule {
         },
         RedisRulesProvider,
         AuthzAbilityFactory,
+        AuthzHeaderGuard,
         PermissionsGuard,
       ],
       exports: [
         RedisRulesProvider,
         AuthzAbilityFactory,
+        AuthzHeaderGuard,
         PermissionsGuard,
       ],
     };
@@ -68,11 +71,13 @@ export class AuthzModule {
         },
         RedisRulesProvider,
         AuthzAbilityFactory,
+        AuthzHeaderGuard,
         PermissionsGuard,
       ],
       exports: [
         RedisRulesProvider,
         AuthzAbilityFactory,
+        AuthzHeaderGuard,
         PermissionsGuard,
       ],
     };

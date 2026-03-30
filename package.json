@@ -1,6 +1,6 @@
 {
   "name": "@rock-and-rolls-fit/rrf-gym-auth-package",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Reusable authorization package for RockFit microservices using CASL",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

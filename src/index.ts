@@ -15,6 +15,7 @@ export * from './providers/authz-ability.factory.js';
 export * from './decorators/index.js';
 
 // Guards
+export * from './guards/authz-header.guard.js';
 export * from './guards/permissions.guard.js';
 
 // Module

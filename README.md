@@ -46,13 +46,17 @@ AuthzModule.registerAsync({
 
 ### 2. Protect endpoints
 
-Your JWT auth guard must populate `request.user` with `{ userId, email, roleName, roleId }` before `PermissionsGuard` runs.
+If your service receives the user context in the `x-authz` header, use `AuthzHeaderGuard` before `PermissionsGuard`. The header value must be plain text containing JSON with `{ userId, email, roleName, roleId }`.
 
 ```typescript
-import { CheckPermission, PermissionsGuard } from '@rock-and-rolls-fit/rrf-gym-auth-package';
+import {
+  AuthzHeaderGuard,
+  CheckPermission,
+  PermissionsGuard,
+} from '@rock-and-rolls-fit/rrf-gym-auth-package';
 
 @Controller('payments')
-@UseGuards(JwtAuthGuard, PermissionsGuard)
+@UseGuards(AuthzHeaderGuard, PermissionsGuard)
 export class PaymentsController {
   @Get()
   @CheckPermission('read', 'Payment')
@@ -63,6 +67,8 @@ export class PaymentsController {
   create() { ... }
 }
 ```
+
+If you already have another authentication guard, keep using it as long as it populates `request.user` with the same shape before `PermissionsGuard` runs.
 
 ### 3. Advanced: policy handlers
 
