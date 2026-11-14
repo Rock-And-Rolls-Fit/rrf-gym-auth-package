@@ -1,6 +1,9 @@
 // Types
 export * from './types/index.js';
 
+// Utils
+export * from './utils/resolve-authz-header.js';
+
 // Constants
 export * from './constants.js';
 
