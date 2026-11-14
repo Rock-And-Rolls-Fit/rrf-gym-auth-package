@@ -33,7 +33,7 @@ Consumers can currently resolve the header only through the NestJS guard. A stan
 - No runtime harness applies; this package has no runtime application.
 
 ## Progress
-- T1: implementation and functional verification complete; work-unit commit pending.
+- T1: implementation and functional verification complete; work-unit commit `50a5c2d` (`feat(auth): add reusable x-authz resolver`).
 
 ## Next Step
-Commit the verified work unit, record its commit identity, and keep this document and its Engram mirror synchronized.
+No additional work remains. Push, PR creation, and merge remain the user's decision.
